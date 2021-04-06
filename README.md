@@ -125,17 +125,37 @@ Add ``` android:extractNativeLibs="false" ``` to application in the Manifest.xml
 </application>
 ```
 
-# License
-```
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+## Visualizer使用
 
-    http://www.apache.org/licenses/LICENSE-2.0
+**1、获取实例**
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+```java
+visualizer = new Visualizer(mediaPlayer.getAudioSessionId());
 ```
+
+ **2、设置采样值**
+
+```java
+visualizer.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
+```
+
+通过Visualizer.getCaptureSizeRange()这一底层实现的方法来返回一个采样值的范围数组，0为最小值128,1为最大值1024！采样值都为2的n次幂！
+
+**3、设置监听器**
+
+```java
+setDataCaptureListener(OnDataCaptureListener listener, rate,iswave,isfft )
+```
+
+先说后面三个参数：rate采样的频率，下边通过方法Visualizer.getMaxCaptureRate()返回最大的采样频率，单位为milliHertz毫赫兹，iswave是波形信号，isfft是频域信号。
+第一个参数OnDataCaptureListener接口，这里可以一个它的匿名内部类，然后它有两个回调方法：
+
+```java
+onWaveFormDataCapture(Visualizer visualizer, byte[] waveform, int samplingRate)
+```
+和
+```java
+onFftDataCapture(Visualizer visualizer, byte[] fft, int samplingRate)
+```
+
+这两个回调对应着上边的两个参数iswave和isfft！如果iswave为true，isfft为false则会回调onWaveFormDataCapture方法，如果iswave为false，isfft为true则会回调onFftDataCapture方法。
