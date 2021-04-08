@@ -60,6 +60,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="16dp"
+                android:visibility="gone"
                 app:wave_background_color="@color/white"
                 app:wave_corner_radius="2dp"
                 app:wave_gap="2dp"
@@ -70,6 +71,12 @@
                 app:wave_progress_color="@color/blue"
                 app:wave_width="5dp" />
 
+            <com.masoudss.lib.DanceView
+                android:id="@+id/danceView"
+                android:layout_width="320dp"
+                app:dance_color="@color/yellow"
+                android:layout_height="300dp"
+                android:layout_gravity="center" />
 
             <TextView
                 android:layout_width="wrap_content"

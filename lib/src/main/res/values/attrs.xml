@@ -2,15 +2,36 @@
 <resources>
 
     <declare-styleable name="WaveformSeekBar">
-        <attr name="wave_progress" format="integer"/>
-        <attr name="wave_max_progress" format="float"/>
-        <attr name="wave_width" format="dimension"/>
-        <attr name="wave_gap" format="dimension"/>
-        <attr name="wave_min_height" format="dimension"/>
-        <attr name="wave_corner_radius" format="dimension"/>
-        <attr name="wave_background_color" format="color"/>
-        <attr name="wave_progress_color" format="color"/>
+        <attr name="wave_progress" format="integer" />
+        <attr name="wave_max_progress" format="float" />
+        <attr name="wave_width" format="dimension" />
+        <attr name="wave_gap" format="dimension" />
+        <attr name="wave_min_height" format="dimension" />
+        <attr name="wave_corner_radius" format="dimension" />
+        <attr name="wave_background_color" format="color" />
+        <attr name="wave_progress_color" format="color" />
         <attr name="wave_gravity" format="enum">
+            <enum name="top" value="1" />
+            <enum name="center" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="DanceView">
+        <attr name="dance_width" format="dimension" />
+        <attr name="dance_gap" format="dimension" />
+        <attr name="dance_min_height" format="dimension" />
+        <attr name="dance_corner_radius" format="dimension" />
+        <attr name="dance_color" format="color" />
+        <attr name="shader_num" format="integer" />
+        <attr name="max_dance_num" format="integer" />
+        <attr name="min_dance_num" format="integer" />
+
+        <attr name="color_start" format="reference|color" />
+        <!-- 渐变中间颜色 -->
+        <attr name="color_center" format="reference|color" />
+        <!-- 渐变结束颜色 -->
+        <attr name="color_end" format="reference|color" />
+        <attr name="dance_gravity" format="enum">
             <enum name="top" value="1" />
             <enum name="center" value="2" />
             <enum name="bottom" value="3" />

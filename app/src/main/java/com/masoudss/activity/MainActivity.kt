@@ -276,11 +276,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun startPlayingAudio(resId: Int) {
         mAudioPlayer.play(this, resId) {
-            waveformSeekBar.release()
+            danceView.release()
         }
         val audioSessionId: Int = mAudioPlayer.audioSessionId
         if (audioSessionId != -1) {
-            waveformSeekBar.setAudioSessionId(audioSessionId)
+            danceView.setAudioSessionId(audioSessionId)
         }
     }
 
