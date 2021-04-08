@@ -1,3 +1,4 @@
+
 ## danceView使用方法
   ```xml
              <com.masoudss.lib.DanceView
@@ -16,6 +17,8 @@
                 app:shader_num="3" />
 
 ```
+<img src="./files/dancer.gif" width="300">
+
 ```xml
 shader_num 顶部加渐变的个数
 
