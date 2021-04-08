@@ -1,3 +1,38 @@
+## danceView使用方法
+  ```xml
+             <com.masoudss.lib.DanceView
+                android:id="@+id/danceView"
+                android:layout_width="320dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                app:color_center="@color/red"
+                app:color_end="@color/white"
+                app:color_start="@color/yellow"
+                app:dance_color="@color/yellow"
+                app:dance_corner_radius="2dp"
+                app:dance_gap="2dp"
+                app:max_dance_num="30"
+                app:min_dance_num="2"
+                app:shader_num="3" />
+
+```
+```xml
+shader_num 顶部加渐变的个数
+
+color_end 渐变尾部颜色
+
+color_start 渐变开头颜色
+
+color_center 渐变中间颜色
+
+min_dance_num 每一列中最少显示的个数
+
+max_dance_num 每一列中最大显示的个数
+
+dance_gap 每一个音频格之间的间距
+
+```
+
 ## Visualizer使用
 
 **1、获取实例**
